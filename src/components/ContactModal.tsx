@@ -7,6 +7,13 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+}
+
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const form = useRef<HTMLFormElement>(null);
@@ -17,7 +24,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     message: ''
   });
   
-  const [errors, setErrors] = useState({} as any);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -49,7 +56,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   }, [isOpen, onClose]);
   
   const validate = () => {
-    const newErrors: any = {};
+    const newErrors: FormErrors = {};
     
     if (!formData.name.trim()) newErrors.name = 'Nome é obrigatório';
     if (!formData.email.trim()) newErrors.email = 'Email é obrigatório';
@@ -63,7 +70,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name]) {
+    if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
   };
