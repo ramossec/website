@@ -1,9 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
+  merge_request_target:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
@@ -24,5 +24,5 @@ jobs:
         uses: gh-pages/deploy@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          deploy_branch: main
+          deploy_branch: master
           build_dir: dist
