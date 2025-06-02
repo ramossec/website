@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Globe, Smartphone, Shield, Laptop, MessageSquare, PenTool, ShoppingBag, ScrollText } from 'lucide-react';
 
 const Services = () => {
