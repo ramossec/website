@@ -12,17 +12,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22.16.0"
+
       - name: Install dependencies
         run: npm install
 
-      - name: Build and deploy
-        run: |
-          npm run build
-          npm run deploy
+      - name: Build project
+        run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: gh-pages/deploy@v1
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          deploy_branch: master
-          build_dir: dist
+          publish_dir: ./dist # ajuste conforme sua pasta de build
