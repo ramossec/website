@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary: #00A3FF;
+  --primary-dark: #0082CC;
+  --accent: #0057FF;
+  --light-gray: #f5f7fa;
+  --text: #333333;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .btn-primary {
+    @apply bg-[#00A3FF] hover:bg-[#0082CC] text-white font-semibold py-3 px-6 rounded-md transition duration-300 inline-block;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent hover:bg-[#00A3FF]/10 text-[#00A3FF] font-semibold py-3 px-6 border border-[#00A3FF] rounded-md transition duration-300 inline-block;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-[#00A3FF] mb-4 relative;
+  }
+  
+  .section-title-center {
+    @apply text-3xl md:text-4xl font-bold text-[#00A3FF] mb-8 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 mb-12 max-w-3xl;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+  z-index: 50;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delay for multiple items */
+.animate-on-scroll:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.animate-on-scroll:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.animate-on-scroll:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.animate-on-scroll:nth-child(5) {
+  transition-delay: 0.4s;
+}
