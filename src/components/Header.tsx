@@ -53,6 +53,7 @@ const Header = () => {
             </button>
             <div className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 ${dropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
               <Link to="/parceiros/tray-varejo" className="block px-4 py-3 hover:bg-gray-100 text-[#00A3FF] transition duration-300">Tray Varejo</Link>
+              <Link to="/parceiros/nuvemshop" className="block px-4 py-3 hover:bg-gray-100 text-[#00A3FF] transition duration-300">Nuvemshop</Link>
             </div>
           </div>
         </nav>
@@ -78,6 +79,7 @@ const Header = () => {
               <div className="text-[#00A3FF] font-medium mb-2">Parceiros</div>
               <div className="pl-4 flex flex-col space-y-2">
                 <Link to="/parceiros/tray-varejo" className="text-[#00A3FF] hover:text-[#0082CC] transition duration-300">Tray Varejo</Link>
+                <Link to="/parceiros/nuvemshop" className="text-[#00A3FF] hover:text-[#0082CC] transition duration-300">Nuvemshop</Link>
               </div>
             </div>
             
