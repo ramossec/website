@@ -250,7 +250,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-[#002B5B]">Endereço</h4>
-                    <p className="text-gray-600">Av. Paulista, 1000 - Bela Vista, São Paulo - SP, 01310-100</p>
+                    <p className="text-gray-600">Rua Taquaritinga,600 Alto Cafezal Marília-SP 17504-071</p>
                   </div>
                 </div>
                 
@@ -260,7 +260,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-[#002B5B]">Telefone</h4>
-                    <p className="text-gray-600">+55 (11) 3456-7890</p>
+                    <p className="text-gray-600">+55 (14) 99122-1870</p>
                   </div>
                 </div>
                 
