@@ -24,6 +24,19 @@ const WhyChooseUs = () => {
     return () => window.removeEventListener('scroll', animateElements);
   }, []);
 
+
+   // WhatsApp number (use only digits, country code included)
+   const whatsappNumber = '5514991221870';
+   const defaultMessage = encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços da RamosSec.');
+ 
+   const handleWhatsAppClick = () => {
+     window.open(
+       `https://wa.me/${whatsappNumber}?text=${defaultMessage}`,
+       '_blank'
+     );
+   };
+
+
   const advantages = [
     "Equipe com mais de 10 anos de experiência no mercado",
     "Projetos entregues dentro do prazo e orçamento estimados",
@@ -70,9 +83,9 @@ const WhyChooseUs = () => {
             </div>
             
             <div className="mt-8">
-              <a href="#contato" className="btn-primary">
+              <button onClick={handleWhatsAppClick} className="btn-primary">
                 Solicitar proposta
-              </a>
+              </button>
             </div>
           </div>
         </div>
